@@ -9,6 +9,10 @@ public class CharacterHeadBehavior : MonoBehaviour
 {
     public float minVertAngle = -50f;
     public float maxVertAngle = 50f;
+    public float projectileSpeed = 10f;
+    public float projectileOffset = 0.5f;
+
+    public GameObject projectile;
 
     // Behavior script for the whole character, where movement and rotation speed are located
     public CharacterBehavior characterBehavior;
@@ -26,6 +30,24 @@ public class CharacterHeadBehavior : MonoBehaviour
     {
         // Get mouse input
         verticalRotation = Input.GetAxis("Mouse Y") * characterBehavior.rotationSpeed;
+
+        // When the user clicks, throw a shuriken
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Debug.Log("Click");
+            // Spawn the projectile a bit in front of the user at the same y position
+            Vector3 spawnOffset = this.transform.forward;
+            spawnOffset.y = 0;
+            spawnOffset.Normalize();
+            spawnOffset = spawnOffset * projectileOffset;
+
+            GameObject newProjectile = Instantiate(projectile, this.transform.position + spawnOffset, this.transform.rotation) as GameObject;
+
+            // Throw projectile in the direction the user is facing
+            Rigidbody projectileRB = newProjectile.GetComponent<Rigidbody>();
+            projectileRB.velocity = this.transform.forward * projectileSpeed;
+        }
     }
 
     private void FixedUpdate()
@@ -51,7 +73,7 @@ public class CharacterHeadBehavior : MonoBehaviour
                 rotX = maxVertAngle;
             }
 
-            this.transform.rotation = Quaternion.Euler(rotX, rotation.y, rotation.z);
+            this.transform.rotation = Quaternion.Euler(rotX, rotation.y, 0);
         }
     }
 }
