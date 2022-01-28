@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Specifies how fruit should be automatically created in the game
+/// </summary>
 public class FruitGeneratorBehavior : MonoBehaviour
 {
+    // GameObject containing the different fruit objects as children
     public GameObject allFruits;
 
     // Fruit will randomly spawn anywhere in this cube
     public GameObject spawnCube;
 
+    // This is where the children of allFruits will be placed
     public List<GameObject> fruitList;
 
+    // True if fruit should be generated, false otherwise.
     public bool spawningActive = true;
 
+    // Time between fruits
     public float timeBetweenSpawn = 1f;
 
     // The next value to spawn a fruit at
@@ -63,6 +70,7 @@ public class FruitGeneratorBehavior : MonoBehaviour
     /// </summary>
     private void UpdateSpawnLocations()
     {
+        // Set min and max values to the boundaries of the transform object
         Transform spawnTransform = spawnCube.transform;
         Vector3 middle = spawnTransform.position;
         float xScale = spawnTransform.localScale.x;

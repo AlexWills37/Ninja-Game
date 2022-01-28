@@ -7,11 +7,16 @@ using UnityEngine;
 /// </summary>
 public class CharacterHeadBehavior : MonoBehaviour
 {
+    // Lowest and highest values for the transform rotation value
     public float minVertAngle = -50f;
     public float maxVertAngle = 50f;
+
+    // Speed at which to throw projectiles
     public float projectileSpeed = 10f;
+    // Offset to spawn projectile, so that it is not created inside the player's colliders
     public float projectileOffset = 0.5f;
 
+    // The projectile to throw
     public GameObject projectile;
 
     // Behavior script for the whole character, where movement and rotation speed are located
@@ -59,7 +64,7 @@ public class CharacterHeadBehavior : MonoBehaviour
         Vector3 rotation = this.transform.rotation.eulerAngles;
         float rotX = rotation.x;
 
-        // If rotation is outside of the minimum, maximum range, snap it to the right direction
+        // Stop rotation from going past the minimum and maximum
         if(rotX > maxVertAngle && rotX < 360 + minVertAngle)
         {
             // Looking up

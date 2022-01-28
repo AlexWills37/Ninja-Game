@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Script to operate the tutorial
+/// </summary>
 public class TutorialTextBehavior : MonoBehaviour
 {
 
@@ -30,6 +33,7 @@ public class TutorialTextBehavior : MonoBehaviour
         "I think you are ready to go to the city! Press spacebar again to move on."
     };
 
+    // Unskippable text waits for a player action
     private bool skippableText;
     private int scriptIndex = 0;
     // Check for teaching the player how to move
@@ -41,7 +45,7 @@ public class TutorialTextBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // Initialize components
         textBox = this.GetComponent<TextMeshProUGUI>();
 
         textBox.SetText( tutorialScript[scriptIndex] );
@@ -49,7 +53,7 @@ public class TutorialTextBehavior : MonoBehaviour
 
         this.gameManager = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
 
-        // Turn off the fruit generator spawner
+        // Turn off the fruit generator
         this.fruitSpawner = GameObject.Find("FruitGenerator").GetComponent<FruitGeneratorBehavior>();
         this.fruitSpawner.spawningActive = false;
     }

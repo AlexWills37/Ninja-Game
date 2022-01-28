@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Defines how destroyable fruit should operate
+/// </summary>
 public class FruitBehavior : MonoBehaviour
 {
 
@@ -11,19 +14,17 @@ public class FruitBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Create fruit and add some spin to make it look more interesting
         this.rb = this.GetComponent<Rigidbody>();
         rb.AddTorque(1, 1, 1, ForceMode.Impulse);
+         
         this.gameBehavior = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
+        // If a fruit is hit by a shuriken, the fruit should be destroyed and the player should gain a point
         if(collision.gameObject.name == "Shuriken(Clone)")
         {
             Debug.Log("Hit!");

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Manages the overall game logic, including points, win condition, and pausing the game
+/// Manages the overall game logic, including points and pausing the game
 /// </summary>
 public class GameBehavior : MonoBehaviour
 {
@@ -58,6 +58,7 @@ public class GameBehavior : MonoBehaviour
     {
         Rect topMiddle = new Rect(Screen.width / 2, Screen.height / 3, 300, 50);
 
+        // When paused, allow the user to quit the game
         if (isPaused)
         {
             GUI.Label(topMiddle, "Paused");

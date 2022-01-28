@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - FruitBehavior
     - FruitGeneratorBehavior
     - GameBehavior
+    - LightingBehavior
     - MenuBehavior
     - ProjectileBehavior
     - TutorialTextBehavior
@@ -18,12 +19,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -65,6 +60,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -89,6 +88,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13124}
     - Class: 114
       Script: {instanceID: 13884}
+    - Class: 114
+      Script: {instanceID: 24922}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -117,6 +118,8 @@ ScriptsOnlyBuild:
     - Class: 49
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -237,23 +240,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
-    - Class: 154
-      Script: {instanceID: 0}
-    - Class: 156
-      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 218
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 1953259897
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -576,12 +571,6 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 659d6ceab26f9e4237abaaf29249f293
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TestScript
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -736,10 +725,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 707c2911b9c31a688e4baeb5dc506b33
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightingBehavior
   platform: 19
   scenePathNames:
   - Assets/Scenes/LandingPage.unity
   - Assets/Scenes/Tutorial.unity
   - Assets/Scenes/CityScene.unity
-  playerPath: C:/Users/alexa/OneDrive/Documents/School/College Sem3.5/Builds/Ninja
+  playerPath: C:/Users/alexa/OneDrive/Documents/School/College Sem3.5/Ninja-Game/Builds/Ninja
     Game.exe

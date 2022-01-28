@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Main menu script
+/// </summary>
 public class MenuBehavior : MonoBehaviour
 {
     /// <summary>
