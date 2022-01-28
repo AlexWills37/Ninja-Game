@@ -35,7 +35,6 @@ public class CharacterHeadBehavior : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            Debug.Log("Click");
             // Spawn the projectile a bit in front of the user at the same y position
             Vector3 spawnOffset = this.transform.forward;
             spawnOffset.y = 0;
