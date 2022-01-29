@@ -77,19 +77,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 12038}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 12564}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12668}
+      Script: {instanceID: 12566}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12670}
+    - Class: 114
+      Script: {instanceID: 12952}
     - Class: 114
       Script: {instanceID: 13124}
     - Class: 114
       Script: {instanceID: 13884}
-    - Class: 114
-      Script: {instanceID: 24922}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -130,15 +130,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11636}
     - Class: 114
-      Script: {instanceID: 12148}
+      Script: {instanceID: 12150}
     - Class: 114
-      Script: {instanceID: 12192}
+      Script: {instanceID: 12194}
     - Class: 114
-      Script: {instanceID: 12720}
+      Script: {instanceID: 12722}
     - Class: 114
-      Script: {instanceID: 13046}
+      Script: {instanceID: 13048}
     - Class: 114
-      Script: {instanceID: 13064}
+      Script: {instanceID: 13066}
     - Class: 114
       Script: {instanceID: 13314}
     - Class: 114
@@ -209,19 +209,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11974}
+      Script: {instanceID: 11976}
     - Class: 114
-      Script: {instanceID: 12038}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12148}
+      Script: {instanceID: 12150}
     - Class: 114
-      Script: {instanceID: 12564}
+      Script: {instanceID: 12566}
     - Class: 114
-      Script: {instanceID: 12668}
+      Script: {instanceID: 12670}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12952}
     - Class: 114
-      Script: {instanceID: 13046}
+      Script: {instanceID: 13048}
     - Class: 114
       Script: {instanceID: 13124}
     - Class: 114
@@ -347,6 +347,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 707c2911b9c31a688e4baeb5dc506b33
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightingBehavior
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -725,12 +731,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 707c2911b9c31a688e4baeb5dc506b33
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LightingBehavior
   platform: 19
   scenePathNames:
   - Assets/Scenes/LandingPage.unity

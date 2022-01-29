@@ -7,7 +7,14 @@ using UnityEngine;
 /// </summary>
 public class GameBehavior : MonoBehaviour
 {
+    public TimerBehavior timer;
+
     private bool isPaused = false;
+
+    private bool gameOver = false;
+
+    private bool freePlay = false;
+    private string rank = "";
 
     private int privatePoints;
     /// <summary>
@@ -27,6 +34,7 @@ public class GameBehavior : MonoBehaviour
     {
         // Locks the cursor at the beginning of the gamme
         Cursor.lockState = CursorLockMode.Locked;
+        timer = GameObject.Find("Timer").GetComponent<TimerBehavior>();
     }
 
     // Update is called once per frame
@@ -49,6 +57,34 @@ public class GameBehavior : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+
+        // Check for the end condition
+        if (!freePlay && !gameOver && timer.TimeUp)
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            gameOver = true;
+
+            // Determine the rank based on how many fruit the player destroyed
+            int rankS = (int)(timer.timeLimit) - 10;
+            int rankA = (int)(rankS * 0.9);
+            int rankB = (int)(rankS * 0.7);
+            
+            if(points >= rankS)
+            {
+                rank = "S";
+            } else if (points >= rankA)
+            {
+                rank = "A";
+            } else if (points >= rankB)
+            {
+                rank = "B";
+            } else
+            {
+                rank = "C";
+            }
+
+        }
     }
 
     /// <summary>
@@ -56,12 +92,12 @@ public class GameBehavior : MonoBehaviour
     /// </summary>
     private void OnGUI()
     {
-        Rect topMiddle = new Rect(Screen.width / 2, Screen.height / 3, 300, 50);
+        Rect topMiddle = new Rect(Screen.width / 2 - 45, Screen.height / 3, 90, 25);
 
         // When paused, allow the user to quit the game
         if (isPaused)
         {
-            GUI.Label(topMiddle, "Paused");
+            GUI.Box(topMiddle, "Paused");
             if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 25, 200, 50), "Quit Game"))
             {
                 Application.Quit();
@@ -69,7 +105,38 @@ public class GameBehavior : MonoBehaviour
             
         }
 
+        // Game over screen - display score and allow user to quit or keep playing
+        if (gameOver)
+        {
+            GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 3, 200, 55), "Game Over\nFruit Collected: " + points + "\nRank: " + rank);
+
+            // Quit game button
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2, 200, 30), "Quit Game"))
+            {
+                Application.Quit();
+            }
+
+            // Continue free play button
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 40, 200, 30), "Free Play"))
+            {
+                EnterFreePlay();
+            }
+        }
+
         // Display the score
         GUI.Box(new Rect(20, 20, 150, 25), "Fruit Destroyed: " + points);
+    }
+
+
+    /// <summary>
+    /// Configure the game to work in free play - no timer, just fruit.
+    /// </summary>
+    private void EnterFreePlay()
+    {
+        gameOver = false;
+        freePlay = true;
+        timer.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
