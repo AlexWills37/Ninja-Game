@@ -17,7 +17,7 @@ public class FruitBehavior : MonoBehaviour
         // Create fruit and add some spin to make it look more interesting
         this.rb = this.GetComponent<Rigidbody>();
         rb.AddTorque(1, 1, 1, ForceMode.Impulse);
-         
+
         this.gameBehavior = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
     }
 

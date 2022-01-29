@@ -110,17 +110,19 @@ public class GameBehavior : MonoBehaviour
         {
             GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 3, 200, 55), "Game Over\nFruit Collected: " + points + "\nRank: " + rank);
 
+            
             // Quit game button
-            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2, 200, 30), "Quit Game"))
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 100, 200, 30), "Quit Game"))
             {
                 Application.Quit();
             }
 
             // Continue free play button
-            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 40, 200, 30), "Free Play"))
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 140, 200, 30), "Free Play"))
             {
                 EnterFreePlay();
             }
+
         }
 
         // Display the score

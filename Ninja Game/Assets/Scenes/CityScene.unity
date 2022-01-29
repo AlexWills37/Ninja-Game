@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  timeLimit: 30
+  timeLimit: 60
 --- !u!1 &1714327982
 GameObject:
   m_ObjectHideFlags: 0
