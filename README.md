@@ -10,7 +10,7 @@ Download the code and go to the Builds folder.
 Open the Windows Build folder and run Ninja Game.exe
 
 ### On Mac
-Open Mac OS X Build.app
+Currently unavailable, sorry. The builds folder has a .app file, but I am not sure if it works because I do not have a Mac device.
 
 ## How to play
 
@@ -28,6 +28,9 @@ Space to progress through tutorial text.
 Left-click to throw shurikens.
 
 Escape to pause the game, where you can then quit the game.
+
+## Trailer
+[Trailer can be found here!](https://youtu.be/9XxbNNLrc0Q)
 
 ## Gameplay
 ![53 seconds left](https://user-images.githubusercontent.com/77563588/151691166-e871a5f6-8f7e-4dea-9f90-93ccccd69333.png)
