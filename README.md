@@ -42,7 +42,7 @@ Escape to pause the game, where you can then quit the game.
 - Polish and improve the GUI
 - Add different modes to throw ninja stars differently
 - Make level design more interesting
-- Add a win condition, conflict, lose condition, or some other way to add a challenge
+- Add more challenges
 - Fix bugs
 
 ## Credits
