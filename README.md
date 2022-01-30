@@ -29,6 +29,14 @@ Left-click to throw shurikens.
 
 Escape to pause the game, where you can then quit the game.
 
+## Gameplay
+![53 seconds left](https://user-images.githubusercontent.com/77563588/151691166-e871a5f6-8f7e-4dea-9f90-93ccccd69333.png)
+![32 seconds left](https://user-images.githubusercontent.com/77563588/151691172-faad19e2-bee3-4f4c-958f-f815e9812520.png)
+![Freeplay](https://user-images.githubusercontent.com/77563588/151691176-041185d8-03dc-47bf-a09e-bc0d87bf12a5.png)
+
+
+[Here is a link to a video of the game!](https://youtu.be/gUk9LmVhzgY)
+
 ## Future work
 - Add more levels
 - Polish and improve the GUI
