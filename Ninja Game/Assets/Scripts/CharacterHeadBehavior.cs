@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class CharacterHeadBehavior : MonoBehaviour
 {
+
+    public Weapon weapon;
+
     // Lowest and highest values for the transform rotation value
     public float minVertAngle = -50f;
     public float maxVertAngle = 50f;
@@ -36,21 +39,18 @@ public class CharacterHeadBehavior : MonoBehaviour
         // Get mouse input
         verticalRotation = Input.GetAxis("Mouse Y") * characterBehavior.rotationSpeed;
 
-        // When the user clicks, throw a shuriken
+        // When the user clicks, use a weapon
         if (Input.GetMouseButtonDown(0))
         {
-
-            // Spawn the projectile a bit in front of the user at the same y position
-            Vector3 spawnOffset = this.transform.forward;
-            spawnOffset.y = 0;
-            spawnOffset.Normalize();
-            spawnOffset = spawnOffset * projectileOffset;
-
-            GameObject newProjectile = Instantiate(projectile, this.transform.position + spawnOffset, this.transform.rotation) as GameObject;
-
-            // Throw projectile in the direction the user is facing
-            Rigidbody projectileRB = newProjectile.GetComponent<Rigidbody>();
-            projectileRB.velocity = this.transform.forward * projectileSpeed;
+            if(weapon == Weapon.SingleShuriken)
+            {
+                throwSingleShuriken();
+            } else if (weapon == Weapon.TripleShuriken)
+            {
+                throwTripleShuriken();
+            }
+            
+            
         }
     }
 
@@ -79,5 +79,26 @@ public class CharacterHeadBehavior : MonoBehaviour
 
             this.transform.rotation = Quaternion.Euler(rotX, rotation.y, 0);
         }
+    }
+
+    private void throwSingleShuriken()
+    {
+        // Spawn the projectile a bit in front of the user at the same y position
+        Vector3 spawnOffset = this.transform.forward;
+        spawnOffset.y = 0;
+        spawnOffset.Normalize();
+        spawnOffset = spawnOffset * projectileOffset;
+
+        GameObject newProjectile = Instantiate(projectile, this.transform.position + spawnOffset, this.transform.rotation) as GameObject;
+
+        // Throw projectile in the direction the user is facing
+        Rigidbody projectileRB = newProjectile.GetComponent<Rigidbody>();
+        projectileRB.velocity = this.transform.forward * projectileSpeed;
+    }
+
+    private void trowTripleShuriken()
+    {
+        throwSingleShuriken();
+
     }
 }
