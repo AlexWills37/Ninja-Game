@@ -10,6 +10,8 @@ public class CharacterHeadBehavior : MonoBehaviour
 
     public Weapon weapon;
 
+    public float spreadAngle = 60;
+
     // Lowest and highest values for the transform rotation value
     public float minVertAngle = -50f;
     public float maxVertAngle = 50f;
@@ -42,9 +44,12 @@ public class CharacterHeadBehavior : MonoBehaviour
         // When the user clicks, use a weapon
         if (Input.GetMouseButtonDown(0))
         {
+            // Single throw
             if(weapon == Weapon.SingleShuriken)
             {
                 throwSingleShuriken();
+
+                // Triple throw
             } else if (weapon == Weapon.TripleShuriken)
             {
                 throwTripleShuriken();
@@ -81,24 +86,56 @@ public class CharacterHeadBehavior : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Throw a single shuriken in front of the player
+    /// </summary>
     private void throwSingleShuriken()
     {
-        // Spawn the projectile a bit in front of the user at the same y position
+        throwShurikenAngle(0);
+    }
+
+    /// <summary>
+    /// Throw 3 shurikens at once, at a bit of a spread angle
+    /// </summary>
+    private void throwTripleShuriken()
+    {
+
+        // Spawn projectiles at an angle
+        float halfAngle = spreadAngle / 2;
+
+        // Throw a shuriken straight ahead of the player
+        throwSingleShuriken();
+        // And two at equal angles from the center
+        throwShurikenAngle(-halfAngle);
+        throwShurikenAngle(halfAngle);
+
+
+    }
+
+    /// <summary>
+    /// Spawn a shuriken in front of the player at the relative angle from the player
+    /// </summary>
+    /// <param name="angle"> The angle from the player to throw the star. Positive angle is to the right
+    /// of the player, and negative angle is to the left. E.g. 0 corresponds to right in front of the player,
+    /// 90 for 90 degrees to the right of the player, and -90 for 90 degrees to the left of the player </param>
+    private void throwShurikenAngle(float angle)
+    {
+        // Spawn at an offset so that shuriken is not inside of the player
         Vector3 spawnOffset = this.transform.forward;
         spawnOffset.y = 0;
         spawnOffset.Normalize();
-        spawnOffset = spawnOffset * projectileOffset;
+        spawnOffset *= projectileOffset;
 
-        GameObject newProjectile = Instantiate(projectile, this.transform.position + spawnOffset, this.transform.rotation) as GameObject;
+        // Copy the player's transform, rotate the suriken, and translate it by an offset
+        Transform playerTransform = this.GetComponent<Transform>();
+        Vector3 starRotation = playerTransform.rotation.eulerAngles;
+        starRotation.y += angle;
 
-        // Throw projectile in the direction the user is facing
-        Rigidbody projectileRB = newProjectile.GetComponent<Rigidbody>();
-        projectileRB.velocity = this.transform.forward * projectileSpeed;
-    }
+        // Create shuriken, spawn it, add velocity, and destroy it after 2 seconds
+        GameObject star = Instantiate(projectile, playerTransform.position + spawnOffset, Quaternion.Euler(starRotation)) as GameObject;
+        Rigidbody projectileRB = star.GetComponent<Rigidbody>();
+        projectileRB.velocity = star.transform.forward * projectileSpeed;
 
-    private void trowTripleShuriken()
-    {
-        throwSingleShuriken();
-
+        Destroy(star, 2);
     }
 }
