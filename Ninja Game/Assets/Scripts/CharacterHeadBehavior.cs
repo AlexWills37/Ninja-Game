@@ -78,7 +78,9 @@ public class CharacterHeadBehavior : MonoBehaviour
 
         // Ensure that the rotation does not go past the minimum and maximum angle
         Vector3 rotation = this.transform.rotation.eulerAngles;
-        float rotX = rotation.x;
+
+        // Always look forward from the body's perspective
+        float rotX = transform.parent.rotation.eulerAngles.x;
 
         // Stop rotation from going past the minimum and maximum
         if(rotX > maxVertAngle && rotX < 360 + minVertAngle)
