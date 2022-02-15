@@ -25,6 +25,12 @@ public class FruitGeneratorBehavior : MonoBehaviour
     // The next value to spawn a fruit at
     private float timeToSpawn;
 
+    public ActiveFruitCounter fruitCounter;
+    /// <summary>
+    /// The most fruit that can be in the scene at any moment
+    /// </summary>
+    public int maxActiveFruit = 30;
+
     // The boundaries of the cube to spawn from
     private float minX;
     private float maxX;
@@ -38,6 +44,8 @@ public class FruitGeneratorBehavior : MonoBehaviour
         UpdateSpawnLocations();
         RegisterFruit();
         timeToSpawn = Time.time + timeBetweenSpawn;
+        fruitCounter = GameObject.Find("Game Manager").GetComponent<ActiveFruitCounter>();
+
     }
 
     // Update is called once per frame
@@ -56,13 +64,19 @@ public class FruitGeneratorBehavior : MonoBehaviour
     /// </summary>
     void SpawnFruit()
     {
-        // Random vector between minX, minZ and maxX, maxZ, at spawnY
-        Vector3 position = new Vector3(Random.Range(minX, maxX), spawnY, Random.Range(minZ, maxZ));
+        // Don't spawn fruit past the limit
+        if(fruitCounter.numActiveFruit < maxActiveFruit)
+        {
+            // Random vector between minX, minZ and maxX, maxZ, at spawnY
+            Vector3 position = new Vector3(Random.Range(minX, maxX), spawnY, Random.Range(minZ, maxZ));
 
-        // Random fruit in the fruitlist
-        GameObject randomFruit = fruitList[Random.Range(0, fruitList.Count)];
+            // Random fruit in the fruitlist
+            GameObject randomFruit = fruitList[Random.Range(0, fruitList.Count)];
 
-        Instantiate(randomFruit, position, Quaternion.identity);
+            Instantiate(randomFruit, position, Quaternion.identity);
+
+            fruitCounter.numActiveFruit += 1;
+        }
     }
 
     /// <summary>

@@ -10,6 +10,7 @@ public class FruitBehavior : MonoBehaviour
 
     public Rigidbody rb;
     public GameBehavior gameBehavior;
+    public ActiveFruitCounter fruitCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,9 @@ public class FruitBehavior : MonoBehaviour
         this.rb = this.GetComponent<Rigidbody>();
         rb.AddTorque(1, 1, 1, ForceMode.Impulse);
 
-        this.gameBehavior = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
+        GameObject manager = GameObject.Find("Game Manager");
+        this.gameBehavior = manager.GetComponent<GameBehavior>();
+        this.fruitCounter = manager.GetComponent<ActiveFruitCounter>();
     }
 
 
@@ -30,6 +33,8 @@ public class FruitBehavior : MonoBehaviour
             Debug.Log("Hit!");
             Destroy(this.gameObject);
             gameBehavior.points++;
+            fruitCounter.numActiveFruit -= 1;
+
         }
     }
 }
