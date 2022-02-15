@@ -27,12 +27,17 @@ public class CharacterHeadBehavior : MonoBehaviour
     // Behavior script for the whole character, where movement and rotation speed are located
     public CharacterBehavior characterBehavior;
 
+
+    public GameBehavior gameManager;
+    public int tripleShurikenUnlock = 25;
+
     private float verticalRotation;
 
     // Start is called before the first frame update
     void Start()
     {
         characterBehavior = this.GetComponentInParent<CharacterBehavior>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
     }
 
     // Update is called once per frame
@@ -44,6 +49,12 @@ public class CharacterHeadBehavior : MonoBehaviour
         // When the user clicks, use a weapon
         if (Input.GetMouseButtonDown(0))
         {
+            // Check to see which weapon is unlocked
+            if ( !(gameManager.points < tripleShurikenUnlock)) 
+            {
+                weapon = Weapon.TripleShuriken;
+            }
+
             // Single throw
             if(weapon == Weapon.SingleShuriken)
             {
