@@ -1,10 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ActiveFruitCounter
     - CharacterBehavior
     - CharacterHeadBehavior
+    - DessertBehavior
     - FirstPersonCameraBehavior
     - FruitBehavior
+    - FruitCounterGUIBehavior
     - FruitGeneratorBehavior
     - GameBehavior
     - LightingBehavior
@@ -78,33 +81,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11494}
     - Class: 114
-      Script: {instanceID: 11690}
+      Script: {instanceID: 11548}
     - Class: 114
-      Script: {instanceID: 12040}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 12150}
+      Script: {instanceID: 11692}
     - Class: 114
-      Script: {instanceID: 12566}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 13124}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 13314}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 13400}
+      Script: {instanceID: 12960}
     - Class: 114
-      Script: {instanceID: 13870}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13886}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13892}
+      Script: {instanceID: 13322}
+    - Class: 114
+      Script: {instanceID: 13408}
+    - Class: 114
+      Script: {instanceID: 13878}
+    - Class: 114
+      Script: {instanceID: 13894}
+    - Class: 114
+      Script: {instanceID: 13900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -116,6 +127,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -149,27 +164,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 11636}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 12150}
+      Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12194}
+      Script: {instanceID: 12198}
     - Class: 114
-      Script: {instanceID: 12722}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13066}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13314}
+      Script: {instanceID: 13322}
     - Class: 114
-      Script: {instanceID: 13400}
+      Script: {instanceID: 13408}
     - Class: 114
-      Script: {instanceID: 13538}
+      Script: {instanceID: 13546}
     - Class: 114
-      Script: {instanceID: 13618}
+      Script: {instanceID: 13626}
     - Class: 114
-      Script: {instanceID: 13892}
+      Script: {instanceID: 13900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -215,6 +230,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -228,31 +247,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11494}
     - Class: 114
-      Script: {instanceID: 11976}
+      Script: {instanceID: 11548}
     - Class: 114
-      Script: {instanceID: 12040}
+      Script: {instanceID: 11978}
     - Class: 114
-      Script: {instanceID: 12150}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12566}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 13124}
+      Script: {instanceID: 12960}
     - Class: 114
-      Script: {instanceID: 13314}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13400}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13886}
+      Script: {instanceID: 13322}
     - Class: 114
-      Script: {instanceID: 13892}
+      Script: {instanceID: 13408}
+    - Class: 114
+      Script: {instanceID: 13894}
+    - Class: 114
+      Script: {instanceID: 13900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -298,6 +321,12 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 701a26c1a60c0338a61874f0351a0081
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DessertBehavior
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -310,7 +339,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 982bbe7c403307dc7cf370aca3304655
+      Hash: f949ceb73e93be562717e796664cc00a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FruitGeneratorBehavior
@@ -460,6 +489,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: c81ba3103166778cdf48d70c4eb2149e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ActiveFruitCounter
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -508,7 +543,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 09dd586bdd4198022a065365af8021fc
+      Hash: a26c931c7439b0473046d50026d04f1d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterHeadBehavior
@@ -532,6 +567,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 7c3ad0f5d66d7f75fe4ceec5df32918d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FruitCounterGUIBehavior
+  - hash:
+      serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -550,7 +591,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 0b622efe2c1150680e88b188a1527def
+      Hash: 701a26c1a60c0338a61874f0351a0081
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FruitBehavior
@@ -718,7 +759,7 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: fcb971cf59f60d39a7bb71c1eec1b7d0
+      Hash: 945ef80582f9ebe5565a9bf473ab89f3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterBehavior
@@ -763,5 +804,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LandingPage.unity
   - Assets/Scenes/Tutorial.unity
   - Assets/Scenes/CityScene.unity
-  playerPath: C:/Users/alexa/OneDrive/Documents/School/College Sem3.5/Ninja-Game/Ninja
-    Game/Builds/Ninja Game.exe
+  playerPath: C:/Users/alexa/OneDrive/Documents/School/Ninja-Game/Ninja Game/Builds/Windows
+    Build/Ninja Game.exe
