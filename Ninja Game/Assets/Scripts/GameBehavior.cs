@@ -16,6 +16,8 @@ public class GameBehavior : MonoBehaviour
     private bool freePlay = false;
     private string rank = "";
 
+    private bool endScreen = false;
+
     private int privatePoints;
     /// <summary>
     /// The number of points the user currently has
@@ -112,21 +114,28 @@ public class GameBehavior : MonoBehaviour
 
             
             // Quit game button
-            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 100, 200, 30), "Quit Game"))
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 100, 200, 30), "Quit Game Early"))
             {
                 Application.Quit();
             }
 
             // Continue free play button
-            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 140, 200, 30), "Free Play"))
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 140, 200, 30), "Continue Game"))
             {
                 EnterFreePlay();
             }
 
         }
 
-        // Display the score
-        GUI.Box(new Rect(20, 20, 150, 25), "Fruit Destroyed: " + points);
+        // If the game is officially over, only display a quit button
+        if (endScreen)
+        {
+            // Quit game button
+            if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 100, 200, 30), "Quit Game"))
+            {
+                Application.Quit();
+            }
+        }
     }
 
 
@@ -140,5 +149,13 @@ public class GameBehavior : MonoBehaviour
         timer.gameObject.SetActive(false);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+    public void EndGame()
+    {
+        Time.timeScale = 0;
+        endScreen = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

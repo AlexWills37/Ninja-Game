@@ -675,6 +675,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1357696863490704763, guid: e02b7f3771f1cb44ab38b3c59cc1755d,
+        type: 3}
+      propertyPath: weapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1357696864731084900, guid: e02b7f3771f1cb44ab38b3c59cc1755d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1612,4 +1617,7 @@ MonoBehaviour:
   - Excellent! Now to put it all together...
   - Try hitting some fruit with your ninja stars!
   - 
+  - Sometimes, chocolate cake will fall from the sky. If you throw stars at the cake,
+    you will lose points.
+  - If you touch the cake, however, you will eat it and gain two points!
   - I think you are ready to go to the city! Press spacebar again to move on.

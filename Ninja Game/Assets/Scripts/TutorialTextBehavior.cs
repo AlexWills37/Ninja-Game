@@ -30,6 +30,8 @@ public class TutorialTextBehavior : MonoBehaviour
         "Excellent! Now to put it all together...",
         "Try hitting some fruit with your ninja stars!",
         "",
+        "Sometimes, chocolate cake will fall from the sky. If you throw stars at the cake, you will lose points.",
+        "If you touch the cake, however, you will eat it and gain two points!",
         "I think you are ready to go to the city! Press spacebar again to move on."
     };
 
@@ -140,7 +142,7 @@ public class TutorialTextBehavior : MonoBehaviour
         } else
         {
             // Once the user destroys a fruit, progress dialogue to the end
-            if (gameManager.points > 0)
+            if (gameManager.points != 0)
             {
                 ResumeText();
             }
