@@ -38,7 +38,15 @@ Escape to pause the game, where you can then quit the game.
 ![Freeplay](https://user-images.githubusercontent.com/77563588/151691176-041185d8-03dc-47bf-a09e-bc0d87bf12a5.png)
 
 
-[Here is a link to a video of the game!](https://youtu.be/gUk9LmVhzgY)
+[Here is a link to a video of the game!](https://youtu.be/tG-FQx-BQHc)
+
+## Veresion 1.1
+- Improved the GUI
+- Added triple shurikens
+- Added cake to eat, not destroy (more dynamic points)
+- Added definite end screen
+- Fruit can now knock you down
+- Added some wall sprites
 
 ## Future work
 - Add more levels
