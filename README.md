@@ -1,7 +1,7 @@
 # Ninja-Game
 Throw shurikens to clean up fruit that falls from the sky!
 
-This game was made with Unity 3D for an introductory course on C# and Unity.
+This game was made with Unity 3D for a course on C# and Unity.
 
 ## How to run the game
 Download the code and go to the Builds folder.
