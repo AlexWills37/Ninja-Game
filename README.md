@@ -10,7 +10,7 @@ Download the code and go to the Builds folder.
 Open the Windows Build folder and run Ninja Game.exe
 
 ### On Mac
-Currently unavailable, sorry. The builds folder has a .app file, but I am not sure if it works because I do not have a Mac device.
+Currently unavailable, sorry.
 
 ## How to play
 
